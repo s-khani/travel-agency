@@ -70,3 +70,48 @@
   - from where and to where in city
 
 
+### Technical stories
+- provide all available trips (User)
+  - backend
+    - creat Trip entity
+      - tripStartDate
+      - tripEndDate
+      - destination
+        - country
+        - city
+      - tripPrice
+        - cost (BigDecimal)
+        - currency
+      - transport type (Enum)
+      - security rules
+        - travel restrictions
+        - Insurance
+      - payment type(ENUM)
+        - MONEY,CARD,TRANSFER,APPLE PAY,GOOGLE PAY, PAYPAL
+      - meal types(Enum)
+        - Breakfasts
+        - Lunches
+        - Dinners
+        - Snacks
+        - Drinks
+        - HB
+        - All inclusive
+      - hotel facilities
+        - attractions (list)
+        - apartment facilities (list)
+      - list of photos url
+       
+    - trip dto
+    - create TripController (REST)
+      - read all trips - paging by default (default size: 10)
+      - read one trip - by id
+  - create TripService
+  - create TripRepository
+  - handle photos urls(TODO)
+  
+
+  - frontend
+    - cards with trips
+    - some photos
+
+
