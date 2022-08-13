@@ -1,7 +1,7 @@
 ## Travel agency
 - Technology stack
- - Angular - UI
- - Spring Boot - backend
+  - Angular - UI
+  - Spring Boot - backend
 
 - Project business features - initial list:
   - registration of users/admin etc.
