@@ -83,6 +83,7 @@
         - cost (BigDecimal)
         - currency
       - transport type (Enum)
+      - 
       - security rules
         - travel restrictions
         - Insurance
