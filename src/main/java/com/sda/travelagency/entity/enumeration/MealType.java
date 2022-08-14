@@ -8,7 +8,7 @@ public enum MealType {
     DRINKS("Liquid to help you sleep, pick your poison (VODKA/SPIRIT)"),
     HB(""),
     ALL_INCLUSIVE("You get it all!");
-    private String mealDescription;
+    private final String mealDescription;
 
     MealType(String mealDescription) {
         this.mealDescription = mealDescription;
