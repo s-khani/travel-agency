@@ -21,7 +21,7 @@ public class TripService {
         log.info("Finding trip by id: [{}]", id);
 
         if (id != null){
-            throw new  TripNotFoundException("no trip with id"+ id);
+            throw new  TripNotFoundException("no trip with id "+ id);
         }
 
         return null;
