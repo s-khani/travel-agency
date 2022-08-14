@@ -11,7 +11,7 @@ public class Attraction {
 
     String description;
 
-    ageRestrictions ageRestrictions;
+    com.sda.travelagency.entity.enumeration.ageRestrictions ageRestrictions;
 
     List<String> photos;
 }
