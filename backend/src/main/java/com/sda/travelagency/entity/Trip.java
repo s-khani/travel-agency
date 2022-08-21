@@ -1,7 +1,5 @@
 package com.sda.travelagency.entity;
 
-
-import com.sda.travelagency.dto.DestinationDto;
 import com.sda.travelagency.entity.enumeration.MealType;
 import com.sda.travelagency.entity.enumeration.PaymentType;
 import com.sda.travelagency.entity.enumeration.TransportType;
@@ -17,7 +15,7 @@ import java.util.List;
 public class Trip {
     LocalDate tripStartDate;
     LocalDate tripEndDate;
-    DestinationDto destination;
+    Destination destination;
     Price price;
     TransportType typeOfTransport;
     SecurityRules securityRules;

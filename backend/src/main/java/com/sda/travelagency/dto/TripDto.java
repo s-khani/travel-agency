@@ -1,6 +1,6 @@
 package com.sda.travelagency.dto;
 
-import com.sda.travelagency.entity.Destination;
+
 import com.sda.travelagency.entity.enumeration.MealType;
 import com.sda.travelagency.entity.enumeration.PaymentType;
 import com.sda.travelagency.entity.enumeration.TransportType;
@@ -15,7 +15,7 @@ public record TripDto(
 
                       LocalDate tripEndDate,
 
-                      Destination destination,
+                      DestinationDto destination,
                       //inside dto field can have even different type
                       //because dto is only for data transfer
                       String cost,
