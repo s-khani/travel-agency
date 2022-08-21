@@ -1,5 +1,6 @@
 package com.sda.travelagency.entity;
 
+import com.sda.travelagency.entity.enumeration.AgeRestrictions;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -11,7 +12,7 @@ public class Attraction {
 
     String description;
 
-    com.sda.travelagency.entity.enumeration.ageRestrictions ageRestrictions;
+    AgeRestrictions ageRestrictions;
 
     List<String> photos;
 }

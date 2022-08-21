@@ -9,20 +9,34 @@ import com.sda.travelagency.entity.enumeration.PaymentType;
 import com.sda.travelagency.entity.enumeration.TransportType;
 import lombok.Builder;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
 @Builder
-public record TripDto( LocalDate tripStartDate,
-                       LocalDate tripEndDate,
-                       Destination destination,
-                       Price price,
-                       TransportType typeOfTransport,
-                       SecurityRules securityRules,
-                       PaymentType paymentType,
-                       MealType mealType,
-                       HotelFacilities hotelFacilities,
-                       List<String> photos) {
+public record TripDto(
+                      LocalDate tripStartDate,
+
+                      LocalDate tripEndDate,
+
+                      Destination destination,
+                      //inside dto field can have even different type
+                      //because dto is only for data transfer
+                      String cost,
+
+                      String currency,
+
+                      TransportType typeOfTransport,
+
+                      SecurityRulesDto securityRules,
+
+                      PaymentType paymentType,
+
+                      MealType mealType,
+
+                      HotelFacilitiesDto hotelFacilities,
+
+                      List<String> photos) {
 
 
 }

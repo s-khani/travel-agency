@@ -1,6 +1,6 @@
 package com.sda.travelagency.entity.enumeration;
 
-public enum ageRestrictions {
+public enum AgeRestrictions {
 
     NO_LIMIT,
     KIDS_ONLY,
