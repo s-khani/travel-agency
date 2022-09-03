@@ -1,13 +1,10 @@
 package com.sda.travelagency.converter;
 
-import com.sda.travelagency.dto.AttractionDto;
 import com.sda.travelagency.dto.HotelFacilitiesDto;
-import com.sda.travelagency.entity.Attraction;
 import com.sda.travelagency.entity.HotelFacilities;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Component
@@ -20,7 +17,7 @@ public class HotelFacilitiesConverter implements Converter<HotelFacilities, Hote
     }
 
     // till Java 8 implementation
-    @Override
+  /*  @Override
     public HotelFacilitiesDto fromEntityToDto(HotelFacilities entity) {
         List<AttractionDto> attractionDtos = new ArrayList<>();
         for (Attraction attraction: entity.getAttractions()) {
@@ -29,10 +26,31 @@ public class HotelFacilitiesConverter implements Converter<HotelFacilities, Hote
         }
 
         return new HotelFacilitiesDto(attractionDtos, entity.getApartmentFacilities());
+    }*/
+
+    //since java 8 style- more preferred
+
+
+    @Override
+    public HotelFacilitiesDto fromEntityToDto(HotelFacilities entity) {
+        var attractionDtos = entity.getAttractions()
+                .stream()
+          //      .map(attraction -> attractionConverter.fromEntityToDto(attraction))
+                .map( attractionConverter::fromEntityToDto)
+                .collect(Collectors.toList());
+      //          .toList();
+
+        return new HotelFacilitiesDto(attractionDtos, entity.getApartmentFacilities());
     }
 
     @Override
     public HotelFacilities fromDtoToEntity(HotelFacilitiesDto dto) {
-        return null;
+
+        var entities = dto.attractions()
+                .stream()
+                .map(attractionDto -> attractionConverter.fromDtoToEntity(attractionDto))
+                .toList();
+
+        return new HotelFacilities(null,dto.apartmentFacilities());
     }
 }
