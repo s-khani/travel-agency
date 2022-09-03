@@ -16,7 +16,7 @@ public class Trip {
     LocalDate tripStartDate;
     LocalDate tripEndDate;
     Destination destination;
-    Price price;
+    Price tripPrice;
     TransportType typeOfTransport;
     SecurityRules securityRules;
     PaymentType paymentType;
