@@ -2,7 +2,9 @@ package com.sda.travelagency.converter;
 
 import com.sda.travelagency.dto.AttractionDto;
 import com.sda.travelagency.entity.Attraction;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AttractionConverter implements Converter<Attraction, AttractionDto> {
 
     @Override
