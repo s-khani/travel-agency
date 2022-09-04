@@ -8,7 +8,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class TripService{
-  //TODO:add correct module to AppModule
+
 
   constructor(private http: HttpClient) { }
 

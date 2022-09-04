@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TripService} from "../../services/trip-service/trip-service.service";
 import {TripDto} from "../../models/trips";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-trip-list',
@@ -14,9 +15,12 @@ export class TripListComponent implements OnInit {
   constructor(private tripService: TripService) { }
 
   ngOnInit(): void {
+    console.log("trying to obtain data from server...")
     //place for querying the backend and obtaining result
     this.tripService.getAllTrip()
-      //.pipe() //TODO:delay data to present that they are availabe sometimes later
+      .pipe(
+        tap(value => console.log("from server" + value)) // tap() is for logging we can see what's inside the stream of data
+      ) //TODO:delay data to present that they are availabe sometimes later
       .subscribe(value => this.trips = value)
   }
 
