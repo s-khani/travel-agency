@@ -1,9 +1,17 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
+import {allTripsUrl} from "../../models/urls";
 
 @Injectable({
   providedIn: 'root'
 })
-export class TripServiceService {
+export class TripService{
+  //TODO:add correct module to AppModule
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
+
+  getAllTrip(): any{
+    return this.http.get<any[]>(allTripsUrl)
+
+  }
 }
