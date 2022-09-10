@@ -7,5 +7,6 @@ export const allTripsUrl = `${serverUrl}/api/trips`
 export const defaultUrl = ''
 export const aboutUsUrl = 'about-us'
 export const tripsUrl = 'all-trips'
+export const notFoundUrl = '**'
 
 
