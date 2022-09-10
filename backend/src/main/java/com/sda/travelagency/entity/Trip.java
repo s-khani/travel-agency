@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor (access = AccessLevel.PRIVATE)
 @Builder
 @Entity
+@Table(name="TRIPS")
 public class Trip {
     @Id
      @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +25,8 @@ public class Trip {
     //dirty fix just ignore that field
     @Transient
     Destination destination;
-    @Transient
+
+    @Embedded
     Price tripPrice;
     @Enumerated(EnumType.STRING)
     TransportType typeOfTransport;
