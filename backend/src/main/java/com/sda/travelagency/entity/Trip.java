@@ -30,7 +30,8 @@ public class Trip {
     Price tripPrice;
     @Enumerated(EnumType.STRING)
     TransportType typeOfTransport;
-    @Transient
+
+    @OneToOne
     SecurityRules securityRules;
     @Enumerated(EnumType.STRING)
     PaymentType paymentType;
