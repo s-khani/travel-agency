@@ -22,23 +22,26 @@ public class Trip {
     LocalDate tripStartDate;
     LocalDate tripEndDate;
 
-    //dirty fix just ignore that field
-    @Transient
+    @OneToOne
     Destination destination;
 
     @Embedded
     Price tripPrice;
+
     @Enumerated(EnumType.STRING)
     TransportType typeOfTransport;
 
     @OneToOne
     SecurityRules securityRules;
+
     @Enumerated(EnumType.STRING)
     PaymentType paymentType;
     @Enumerated(EnumType.STRING)
     MealType mealType;
+
     @Transient
     HotelFacilities hotelFacilities;
+
     //ToDo: change table name
     @ElementCollection
     @CollectionTable (name = "PHOTOS")
