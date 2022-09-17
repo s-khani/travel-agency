@@ -39,7 +39,7 @@ public class Trip {
     @Enumerated(EnumType.STRING)
     MealType mealType;
 
-    @Transient
+    @OneToOne
     HotelFacilities hotelFacilities;
 
     //ToDo: change table name
