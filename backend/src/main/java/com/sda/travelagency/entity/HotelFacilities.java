@@ -19,7 +19,7 @@ public class HotelFacilities {
     long id;
 
 
-    @Transient
+    @OneToMany
     List<Attraction> attractions;
 
 
