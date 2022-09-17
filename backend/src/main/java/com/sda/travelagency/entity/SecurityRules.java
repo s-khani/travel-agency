@@ -23,4 +23,5 @@ public class SecurityRules {
     String travelRestrictions;
 
     String insurance;
+
 }

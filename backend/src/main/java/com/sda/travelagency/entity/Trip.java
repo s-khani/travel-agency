@@ -39,8 +39,9 @@ public class Trip {
     MealType mealType;
     @Transient
     HotelFacilities hotelFacilities;
-
+    //ToDo: change table name
     @ElementCollection
+            @CollectionTable (name = "PHOTOS")
     List<String> photos;
 
 }
