@@ -41,7 +41,8 @@ public class Trip {
     HotelFacilities hotelFacilities;
     //ToDo: change table name
     @ElementCollection
-            @CollectionTable (name = "PHOTOS")
+    @CollectionTable (name = "PHOTOS")
+    @Column (name = "photo")
     List<String> photos;
 
 }
