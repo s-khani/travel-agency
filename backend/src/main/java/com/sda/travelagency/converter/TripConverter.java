@@ -1,6 +1,5 @@
 package com.sda.travelagency.converter;
 
-import com.sda.travelagency.dto.DestinationDto;
 import com.sda.travelagency.dto.TripDto;
 import com.sda.travelagency.entity.Price;
 import com.sda.travelagency.entity.Trip;
@@ -9,9 +8,10 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 @Component
-public class TripConverter implements Converter<Trip,TripDto> {
+public class TripConverter implements Converter<Trip, TripDto> {
 
     private final DestinationConverter destinationConverter;
+
     private final SecurityRulesConverter securityRulesConverter;
 
     private final HotelFacilitiesConverter hotelFacilitiesConverter;
@@ -22,11 +22,9 @@ public class TripConverter implements Converter<Trip,TripDto> {
         this.hotelFacilitiesConverter = hotelFacilitiesConverter;
     }
 
-
     @Override
     public TripDto fromEntityToDto(Trip trip) {
-
-        DestinationDto destinationDto = destinationConverter.fromEntityToDto(trip.getDestination());
+        var destinationDto = destinationConverter.fromEntityToDto(trip.getDestination());
         var securityRulesDto = securityRulesConverter.fromEntityToDto(trip.getSecurityRules());
         var hotelFacilitiesDto = hotelFacilitiesConverter.fromEntityToDto(trip.getHotelFacilities());
 
@@ -66,3 +64,13 @@ public class TripConverter implements Converter<Trip,TripDto> {
                 .build();
     }
 }
+
+
+
+
+
+
+
+
+
+

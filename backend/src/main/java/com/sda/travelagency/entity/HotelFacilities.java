@@ -16,7 +16,7 @@ public class HotelFacilities {
 
     @Id
             @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long id;
+    Long id;
 
 
     @OneToMany(cascade = CascadeType.ALL)

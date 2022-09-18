@@ -30,19 +30,17 @@ public class HotelFacilitiesConverter implements Converter<HotelFacilities, Hote
 
     //since java 8 style- more preferred
 
-
     @Override
     public HotelFacilitiesDto fromEntityToDto(HotelFacilities entity) {
-        var attractionDtos = entity.getAttractions()
+        var attractionsDtos = entity.getAttractions()
                 .stream()
-          //      .map(attraction -> attractionConverter.fromEntityToDto(attraction))
-                .map( attractionConverter::fromEntityToDto)
-                .collect(Collectors.toList());
-      //          .toList();
+//                .map(attraction -> attractionConverter.fromEntityToDto(attraction))
+                .map(attractionConverter::fromEntityToDto)
+                .collect(Collectors.toList()); // toList() was added at Java 16th
+//                .toList();
 
-        return new HotelFacilitiesDto(entity.getId(), attractionDtos, entity.getApartmentFacilities());
+        return new HotelFacilitiesDto(entity.getId(), attractionsDtos, entity.getApartmentFacilities());
     }
-
     @Override
     public HotelFacilities fromDtoToEntity(HotelFacilitiesDto dto) {
 
@@ -51,6 +49,6 @@ public class HotelFacilitiesConverter implements Converter<HotelFacilities, Hote
                 .map(attractionDto -> attractionConverter.fromDtoToEntity(attractionDto))
                 .toList();
 
-        return new HotelFacilities(dto.id(), null,dto.apartmentFacilities());
+        return new HotelFacilities(dto.id(), entities,dto.apartmentFacilities());
     }
 }

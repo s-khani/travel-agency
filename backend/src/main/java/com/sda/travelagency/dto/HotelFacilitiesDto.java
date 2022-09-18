@@ -4,7 +4,7 @@ import java.util.List;
 
 public record HotelFacilitiesDto(
 
-        long id,
+        Long id,
 
         List<AttractionDto> attractions,
 
