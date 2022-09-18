@@ -42,7 +42,7 @@ public class TripController {
         return tripConverter.fromEntityToDto(entity);
     }
 
-    @PostMapping("/api/trips")
+    @PostMapping
     public TripDto createdNewTrip(@Valid @RequestBody TripDto newTrip){
         log.info("trying to create new trip: [{}]", newTrip);
         //convert dto to entity

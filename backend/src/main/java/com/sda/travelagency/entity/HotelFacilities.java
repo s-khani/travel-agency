@@ -19,7 +19,7 @@ public class HotelFacilities {
     long id;
 
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     List<Attraction> attractions;
 
 

@@ -11,18 +11,21 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor (access = AccessLevel.PRIVATE)
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 @Builder
 @Entity
-@Table(name="TRIPS")
+@Table(name = "TRIPS")
 public class Trip {
+
     @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+
     LocalDate tripStartDate;
+
     LocalDate tripEndDate;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     Destination destination;
 
     @Embedded
@@ -31,21 +34,20 @@ public class Trip {
     @Enumerated(EnumType.STRING)
     TransportType typeOfTransport;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     SecurityRules securityRules;
 
     @Enumerated(EnumType.STRING)
     PaymentType paymentType;
+
     @Enumerated(EnumType.STRING)
     MealType mealType;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     HotelFacilities hotelFacilities;
 
-    //ToDo: change table name
     @ElementCollection
     @CollectionTable(name = "PHOTOS", joinColumns = @JoinColumn(name = "ID_OF_TRIP"))
     @Column(name = "photo")
     List<String> photos;
-
 }
