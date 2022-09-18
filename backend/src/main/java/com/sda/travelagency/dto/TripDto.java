@@ -6,33 +6,46 @@ import com.sda.travelagency.entity.enumeration.PaymentType;
 import com.sda.travelagency.entity.enumeration.TransportType;
 import lombok.Builder;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.List;
 
 @Builder
 public record TripDto(
-                      LocalDate tripStartDate,
 
-                      LocalDate tripEndDate,
+        @Future
+        LocalDate tripStartDate,
 
-                      DestinationDto destination,
-                      //inside dto field can have even different type
-                      //because dto is only for data transfer
-                      String cost,
+        @Future
+        LocalDate tripEndDate,
 
-                      String currency,
+        @NotNull
+        DestinationDto destination,
+        //inside dto field can have even different type
+        //because dto is only for data transfer
 
-                      TransportType typeOfTransport,
+        @NotNull
+        String cost,
 
-                      SecurityRulesDto securityRules,
 
-                      PaymentType paymentType,
+        @NotNull
+        String currency,
 
-                      MealType mealType,
+        @NotNull
+        TransportType typeOfTransport,
 
-                      HotelFacilitiesDto hotelFacilities,
+        SecurityRulesDto securityRules,
 
-                      List<String> photos) {
+
+        @NotNull
+        PaymentType paymentType,
+
+        MealType mealType,
+
+        HotelFacilitiesDto hotelFacilities,
+
+        List<String> photos) {
 
 
 }
