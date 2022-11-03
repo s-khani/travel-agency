@@ -18,6 +18,11 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import {MatIconModule} from "@angular/material/icon";
 import { TripFormComponent } from './components/trip-form/trip-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatSelectModule} from "@angular/material/select";
+import {MatInputModule} from "@angular/material/input";
+import {MatNativeDateModule} from "@angular/material/core";
 
 @NgModule({
   declarations: [
@@ -47,7 +52,12 @@ import {ReactiveFormsModule} from "@angular/forms";
 
     ]),
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

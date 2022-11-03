@@ -26,12 +26,13 @@ public class TripService {
         log.info("Finding all trips");
         return tripRepository.findAll();
     }
-   //FIXME
+
+    //FIXME
     public Trip findTripById(Long id) {
         log.info("Finding trip by id: [{}]", id);
 
-        if (id != null){
-            throw new  TripNotFoundException("no trip with id "+ id);
+        if (id != null) {
+            throw new TripNotFoundException("no trip with id " + id);
         }
 
         return null;
@@ -41,18 +42,18 @@ public class TripService {
     //treats all sqls as atomic changes
     @Transactional
 
-    public Trip createNewTrip(Trip newTrip){
+    public Trip createNewTrip(Trip newTrip) {
         log.info("new trip to save: [{}]", newTrip);
         //Log data
         //store into datasource
         //validate fields of new Trip
         // validate duplicates
-        if(tripRepository.isDuplicateOfOther(newTrip)){
+        if (tripRepository.isDuplicateOfOther(newTrip)) {
             throw new TripAlreadyExistsException("Trip already exist!!!");
         }
         Trip saved = tripRepository.save(newTrip);
 
-        log.info("after saving: [{}]",saved);
+        log.info("after saving: [{}]", saved);
 
         return saved;
     }
